@@ -11,12 +11,17 @@ public class StudentService {
 
     @Autowired private StudentRepo repo;
 
+
     public  Iterable<StudentEntity> listAll() {
         return repo.findAll();
     }
 
-
     public void save(StudentEntity students) {
+       long admnumber = repo.count();
+         admnumber++;
+//        String s = new StringBuilder("R-").append(admnumber).toString();
+        String formattedAdmNumber = String.format("R-%03d", admnumber);
+        students.setAdmissionNumber(formattedAdmNumber);
          repo.save(students);
     }
 }

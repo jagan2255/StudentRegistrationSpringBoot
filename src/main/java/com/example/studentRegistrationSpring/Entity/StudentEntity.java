@@ -12,6 +12,7 @@ public class StudentEntity {
 
     @Id
     private String _id;
+    private String admissionNumber;
     private String name;
     private String className;
     private String division;
@@ -19,8 +20,9 @@ public class StudentEntity {
     private String gender;
 
 
-    public StudentEntity(String _id, String name, String className, String division, Date dob, String gender) {
+    public StudentEntity(String _id, String admissionNumber, String name, String className, String division, Date dob, String gender) {
         this._id = _id;
+        this.admissionNumber = admissionNumber;
         this.name = name;
         this.className = className;
         this.division = division;
@@ -34,6 +36,14 @@ public class StudentEntity {
 
     public void set_id(String _id) {
         this._id = _id;
+    }
+
+    public String getAdmissionNumber() {
+        return admissionNumber;
+    }
+
+    public  void setAdmissionNumber(String admissionNumber) {
+       this.admissionNumber = admissionNumber;
     }
 
     public String getName() {
