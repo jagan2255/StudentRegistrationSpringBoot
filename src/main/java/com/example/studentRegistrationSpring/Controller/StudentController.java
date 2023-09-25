@@ -31,8 +31,8 @@ public class StudentController {
   }
 
   @GetMapping(value = "/getstudents")
-  private Iterable<StudentEntity> listAll(){
-      return studentService.listAll();
+  private Iterable<StudentEntity> listAll(@RequestParam(required = false) String sort){
+      return studentService.listAll(sort);
   }
 
 }
